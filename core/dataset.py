@@ -1,18 +1,8 @@
-import os 
 import cv2
 import numpy as np
 import torch
 from pathlib import Path
 from torch.utils.data import Dataset, DataLoader, random_split
-
-
-# train_images_path and test_images_path
-def get_image_paths(data_path, classes_train):
-    images_paths = []
-    for class_ in classes_train:
-        image_directory = os.path.join(data_path, class_)
-        images_paths = [os.path.join(image_directory, image_name) for image_name in os.listdir(image_directory)]
-    return images_paths
 
 
 class ClassificationDataset(Dataset):
